@@ -1,0 +1,60 @@
+/* 
+  FlexiFunnels Custom CSS for Premium Animated CTA Buttons
+  
+  Instructions:
+  1. Paste this entire code into your FlexiFunnels "Custom CSS" settings.
+  2. Add the class name "ff-animated-cta" to any button you want to animate inside the FlexiFunnels editor.
+*/
+
+.ff-animated-cta {
+    transition: box-shadow 0.3s ease, filter 0.3s ease !important;
+    position: relative !important;
+    overflow: hidden !important;
+    animation: float-pulse 2s ease-in-out infinite !important;
+}
+
+.ff-animated-cta::after {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: -150% !important;
+    width: 50% !important;
+    height: 100% !important;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%) !important;
+    transform: skewX(-25deg) !important;
+    animation: shine-sweep 3s infinite !important;
+    pointer-events: none !important;
+}
+
+.ff-animated-cta:hover {
+    filter: brightness(1.1) !important;
+    transform: scale(1.03) !important;
+    box-shadow: 0 15px 40px rgba(245, 197, 66, 0.5) !important;
+    animation-play-state: paused !important;
+}
+
+.ff-animated-cta:active {
+    transform: scale(0.98) !important;
+    box-shadow: 0 5px 15px rgba(245, 197, 66, 0.2) !important;
+}
+
+@keyframes float-pulse {
+    0% {
+        transform: translateY(0) scale(1);
+        box-shadow: 0 5px 15px rgba(245, 197, 66, 0.2), 0 0 0 0 rgba(245, 197, 66, 0.2);
+    }
+    50% {
+        transform: translateY(-2px) scale(1.01);
+        box-shadow: 0 10px 20px rgba(245, 197, 66, 0.3), 0 0 0 8px rgba(245, 197, 66, 0);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        box-shadow: 0 5px 15px rgba(245, 197, 66, 0.2), 0 0 0 0 rgba(245, 197, 66, 0);
+    }
+}
+
+@keyframes shine-sweep {
+    0% { left: -150%; }
+    20% { left: 150%; }
+    100% { left: 150%; }
+}
